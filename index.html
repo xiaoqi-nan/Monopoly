@@ -1,0 +1,153 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" id="metav" content="width=device-width, user-scalable=no" />
+    <title>“澳”秘欢乐游</title>
+    <link href="css/public.css" rel="stylesheet" />
+    <link href="css/index.css" rel="stylesheet" />
+    <link href="css/test.css" rel="stylesheet" />
+    <script>
+        document.documentElement.style.fontSize = 37.5 * (document.documentElement.clientWidth / 375) + 'px';
+    </script>
+
+</head>
+<body>
+    <div id="loading">
+        <img src="images/loading.gif" />
+    </div>
+    <div class="Main">
+        <div class="Page" id="Home">
+            <div class="Top"></div>
+            <div class="Bottom">
+                <div class="BtnBegin"></div>
+                <div class="ActiveItem">
+                    <div class="Icon Checked"></div>
+                    <div class="ActiveTitle">我已阅读</div>
+                </div>
+                <div class="ExplainInfo">游戏说明及详情</div>
+            </div>
+        </div>
+        <div class="Page" id="Explain">
+            <div class="ExplainTitle">游戏说明及活动条款</div>
+            <div class="WhiteClose"></div>
+            <div class="Explain"></div>
+        </div>
+        <div class="Page" id="Heng">
+            <div class="HengPop">
+                <div class="HengInfo">
+                    <img src="images/heng3.png" />
+                </div>
+            </div>
+        </div>
+        <div class="Page" id="Map">
+            <div class="MapItem">
+                <div class="ZheZhao"></div>
+                <img class="MapImg" src="images/map3.jpg" />
+                <div class="Plan"></div>
+                <div class="Dice"></div>
+            </div>
+            <!--目的地弹层-->
+            <div class="Pop CityPop">
+                <div class="PopBg"></div>
+                <div class="PopItem">
+                    <div class="BlackClose" id="0"></div>
+                    <div class="PopImg">
+                        <img class="CityImg" src="" />
+                    </div>
+                    <div class="PopTitle">宁加洛海洋公园和热带鱼游泳</div>
+                    <div class="PopInfo">欢迎来到墨尔本！这里有被称为“世界上最美的赛车场地”的阿尔伯特公园。在非比赛时段，您也可以驾车飞驰在环湖赛道上，一边欣赏沿途风景，一边感受速度带来的热血澎湃。</div>
+                </div>
+            </div>
+            <!--澳秘卡弹层-->
+            <div class="Pop BayCard">
+                <div class="PopBg"></div>
+                <div class="CardItem">
+                    <!--优惠-->
+                    <div class="CardInfo">
+                        <div class="CardTitle">
+                            <img src="images/cardInfo.png" />
+                        </div>
+                        <div class="CardBtnItem">
+                            <div class="CardBtn BtnDiscount" onclick="ViewOffersFn()"></div>
+                            <div class="CardBtn BtnContinue"></div>
+                        </div>
+                    </div>
+                    <!--加速卡-->
+                    <div class="Accelerate">
+                        <div class="AccelerateInfo">
+                            <img src="images/cardInfo3.png" />
+                        </div>
+                        <div class="BtnAccelerate" id="1"></div>
+                    </div>
+                </div>
+            </div>
+            <!--摇骰子弹层-->
+            <div class="Pop DicePop">
+                <div class="PopBg"></div>
+                <div class="PopItem">
+                    <div class="DiceItem">
+                        <div class="GuangImg">
+                            <img src="images/guang.png" />
+                            <div class="DiceImg DiceAni" id="DiceItem">
+                                <div class="front" id="Dice_1"></div>
+                                <div class="back" id="Dice_2"></div>
+                                <div class="left" id="Dice_3"></div>
+                                <div class="right" id="Dice_4"></div>
+                                <div class="top" id="Dice_5"></div>
+                                <div class="bottom" id="Dice_6"></div>
+                            </div>
+                        </div>
+                        <div class="DiceInfo"></div>
+                        <div class="Continue" id="1">继续旅行</div>
+                    </div>
+                </div>
+            </div>
+            <!--填写信息弹层-->
+            <div class="Pop FillInfo">
+                <div class="PopBg"></div>
+                <div class="PopItem">
+                    <div class="FillTitle">恭喜您通关全部“澳”秘</div>
+                    <div class="FillSmallTitle">请填写以下信息参与抽奖</div>
+                    <div class="FillItem">
+                        <input type="text" class="Input" id="Name" placeholder="姓&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;名" />
+                        <input type="text" class="Input" id="Phone" placeholder="电&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;话" maxlength="11" />
+                        <input type="text" class="Input" id="Address" placeholder="邮&nbsp;寄&nbsp;地&nbsp;址" />
+                        <div class="error"></div>
+                        <div class="BtnSubmit">确认提交</div>
+
+                    </div>
+                    <div class="shareInfo">点击右上角，邀请好友一起探秘澳大利亚</div>
+                </div>
+            </div>
+            <!--成功失败弹层-->
+            <div class="Pop SuccessPop">
+                <div class="PopBg"></div>
+                <div class="PopItem">
+                    <div class="GuangImg">
+                        <img src="images/guang.png" />
+                        <div class="Success"> 提交成功!</div>
+                    </div>
+                    <div class="SuccessInfo">点击下方查看澳大利亚优惠活动<br />开启真正的“澳”秘之旅</div>
+                    <div class="Btn Favourable" onclick="ViewOffersFn()">查看优惠</div>
+                    <div class="Btn BtnAgain">重新开始</div>
+                </div>
+            </div>
+        </div>
+        <!--活动结束-->
+        <div class="Page" id="End">
+            <div class="EndInfo">
+                <div class="BigInfo">活动已结束</div>
+                <div class="SmallInfo">更多精彩内容即将上线<br>敬请期待</div>
+            </div>
+        </div>
+    </div>
+    <script src="js/jquery-1.11.3.js"></script>
+    <script src="js/resLoader.js"></script>
+    <script src="js/jweixin-1.0.0.js"></script>
+    <script src="js/MMXChina.js"></script>
+    <script src="js/weixinSdk.js"></script>
+    <script src="js/getParam.js"></script>
+    <script src="js/index.js"></script>
+</body>
+</html>
